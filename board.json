@@ -156,5 +156,55 @@
   },
   "trash": [
     "card_1781030016245_d9c33a2d155de"
+  ],
+  "labels": [
+    {
+      "color": "#b07ccf",
+      "id": "project",
+      "name": "Projet",
+      "textColor": "black"
+    },
+    {
+      "color": "#f6b93b",
+      "id": "adjustments",
+      "name": "Ajustements",
+      "textColor": "black"
+    },
+    {
+      "color": "#b1fc03",
+      "id": "wordpress",
+      "name": "Wordpress",
+      "textColor": "black"
+    },
+    {
+      "color": "#c79a72",
+      "id": "elementor",
+      "name": "Elementor",
+      "textColor": "black"
+    },
+    {
+      "color": "#fc039d",
+      "id": "statamic",
+      "name": "Statamic",
+      "textColor": "white"
+    },
+    {
+      "color": "#dc2626",
+      "id": "craft",
+      "name": "Craft",
+      "textColor": "white"
+    },
+    {
+      "color": "#21b5cc",
+      "id": "ops",
+      "name": "OPS",
+      "textColor": "black"
+    },
+    {
+      "color": "#34ebb1",
+      "id": "ai",
+      "name": "AI powered",
+      "textColor": "black"
+    }
   ]
 }
