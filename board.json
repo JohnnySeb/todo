@@ -1,0 +1,160 @@
+{
+  "columns": {
+    "todo": {
+      "name": "À faire",
+      "cardIds": []
+    },
+    "waiting": {
+      "name": "En attente",
+      "cardIds": [
+        "card_1781719719573_e234d89c0ac708",
+        "card_1781705213510_391d8bdf83dc58",
+        "card_1781552189788_a8ed7e7c074c2",
+        "card_1770146373472_5cee83ff8dd938",
+        "card_1777408110436_96a7538d1dae28"
+      ]
+    },
+    "doing": {
+      "name": "En cours",
+      "cardIds": [
+        "card_1781028582136_37daa3cf9b52e8"
+      ]
+    },
+    "done": {
+      "name": "Terminé",
+      "cardIds": [
+        "card_1780346311950_367032d34c10d8",
+        "card_1781202189335_4091542f7418d8",
+        "card_1780347045262_249e3c6af8bc68",
+        "card_1780428187054_6d9494dce41f48",
+        "card_1780513635242_8825dfac9e4b6"
+      ]
+    }
+  },
+  "cards": {
+    "card_1770146373472_5cee83ff8dd938": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1770146373472_5cee83ff8dd938",
+      "labels": [
+        "lavender",
+        "project"
+      ],
+      "title": "Clinique Deux Chênes"
+    },
+    "card_1777408110436_96a7538d1dae28": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1777408110436_96a7538d1dae28",
+      "labels": [
+        "lavender",
+        "project",
+        "wordpress"
+      ],
+      "title": "Hiigard"
+    },
+    "card_1780346311950_367032d34c10d8": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1780346311950_367032d34c10d8",
+      "labels": [
+        "ai"
+      ],
+      "title": "Documentation normes AI"
+    },
+    "card_1780347045262_249e3c6af8bc68": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1780347045262_249e3c6af8bc68",
+      "labels": [],
+      "title": "STG - Mise en ligne de Innovitech (avec CMS)"
+    },
+    "card_1780428187054_6d9494dce41f48": {
+      "checklist": [],
+      "description": "Images à mettre en place sur staging Anjalec:<br>https://agencetolle.atlassian.net/browse/ANJ-348<div><br></div><div>Billet de mise en ligne:<br>https://agencetolle.atlassian.net/jira/software/c/projects/ANJ/list?jql=project%20%3D%20ANJ%20AND%20textfields%20~%20%22mise*%22%20ORDER%20BY%20cf%5B10011%5D%20ASC&amp;selectedIssue=ANJ-189</div>",
+      "id": "card_1780428187054_6d9494dce41f48",
+      "labels": [
+        "amber",
+        "lavender",
+        "green",
+        "project",
+        "statamic"
+      ],
+      "title": "Anjalec / SDL"
+    },
+    "card_1780513635242_8825dfac9e4b6": {
+      "checklist": [],
+      "description": "https://agencetolle.atlassian.net/browse/ANJ-353",
+      "id": "card_1780513635242_8825dfac9e4b6",
+      "labels": [
+        "green",
+        "amber",
+        "project",
+        "statamic"
+      ],
+      "title": "Entrée de contenu SDL"
+    },
+    "card_1781028582136_37daa3cf9b52e8": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1781028582136_37daa3cf9b52e8",
+      "labels": [
+        "craft"
+      ],
+      "title": "Craft learning - Val St-Côme"
+    },
+    "card_1781030016245_d9c33a2d155de": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1781030016245_d9c33a2d155de",
+      "labels": [],
+      "lastColumn": "waiting",
+      "lastIndex": 0,
+      "title": "Sans titre"
+    },
+    "card_1781202189335_4091542f7418d8": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1781202189335_4091542f7418d8",
+      "labels": [
+        "ai"
+      ],
+      "title": "Documentation Linting"
+    },
+    "card_1781552189788_a8ed7e7c074c2": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1781552189788_a8ed7e7c074c2",
+      "labels": [
+        "lavender",
+        "project",
+        "craft"
+      ],
+      "title": "Val St-Côme"
+    },
+    "card_1781705213510_391d8bdf83dc58": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1781705213510_391d8bdf83dc58",
+      "labels": [
+        "amber",
+        "ai",
+        "adjustments"
+      ],
+      "title": "Innovitech round #3"
+    },
+    "card_1781719719573_e234d89c0ac708": {
+      "checklist": [],
+      "description": "",
+      "id": "card_1781719719573_e234d89c0ac708",
+      "labels": [
+        "lavender",
+        "project"
+      ],
+      "title": "Colabor - Salon de la restauration"
+    }
+  },
+  "trash": [
+    "card_1781030016245_d9c33a2d155de"
+  ]
+}

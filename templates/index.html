@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>• Todo •</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon/favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon/favicon.svg') }}" />
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}" />
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}" />
+  </head>
+  <body>
+    <div class="ambient"></div>
+    <div class="app-shell">
+      <header class="app-header">
+        <div>
+          <!-- <p class="kicker">Board local</p> -->
+          <h1>· Todo ·</h1>
+          <p class="subtitle">Voici tout ce que t'as à faire! Amuse-toi!</p>
+        </div>
+        <div class="header-actions">
+          <button class="ghost" id="open-labels-modal" type="button">Étiquettes</button>
+          <button class="ghost" id="open-bg-modal" type="button">Fond</button>
+        </div>
+      </header>
+
+      <main class="board" id="board">
+        <section class="column" data-column-id="waiting">
+          <header>
+            <h2>En attente</h2>
+            <button class="add-card" type="button" data-add-column="waiting">+ Ajouter</button>
+          </header>
+          <div class="card-list" data-column-list="waiting" aria-label="En attente"></div>
+        </section>
+
+        <section class="column" data-column-id="todo">
+          <header>
+            <h2>À faire</h2>
+            <button class="add-card" type="button" data-add-column="todo">+ Ajouter</button>
+          </header>
+          <div class="card-list" data-column-list="todo" aria-label="À faire"></div>
+        </section>
+
+        <section class="column" data-column-id="doing">
+          <header>
+            <h2>En cours</h2>
+            <button class="add-card" type="button" data-add-column="doing">+ Ajouter</button>
+          </header>
+          <div class="card-list" data-column-list="doing" aria-label="En cours"></div>
+        </section>
+
+        <section class="column" data-column-id="done">
+          <header>
+            <h2>Terminé</h2>
+            <button class="add-card" type="button" data-add-column="done">+ Ajouter</button>
+          </header>
+          <div class="card-list" data-column-list="done" aria-label="Terminé"></div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Bouton corbeille flottant -->
+    <div class="trash-fab" id="trash-drop">
+      <button
+        class="trash-fab-btn"
+        id="trash-fab-btn"
+        type="button"
+        aria-label="Corbeille"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+          <path d="M10 11v6"></path>
+          <path d="M14 11v6"></path>
+          <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"></path>
+        </svg>
+        <span class="trash-badge" id="trash-badge" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Panneau corbeille -->
+    <div class="trash-panel" id="trash-panel" aria-hidden="true">
+      <div class="trash-panel-backdrop" id="trash-panel-backdrop"></div>
+      <div class="trash-panel-inner">
+        <header class="trash-panel-header">
+          <h3>Corbeille</h3>
+          <div class="trash-panel-actions">
+            <button class="ghost" type="button" id="empty-trash">Vider</button>
+            <button class="icon" type="button" id="close-trash-panel" aria-label="Fermer">✕</button>
+          </div>
+        </header>
+        <div class="trash-list" id="trash-list" aria-label="Corbeille"></div>
+      </div>
+    </div>
+
+    <div class="modal" id="card-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <header>
+          <div>
+            <p class="kicker">Carte</p>
+            <h3 id="modal-title">Modifier la carte</h3>
+          </div>
+          <button class="icon" type="button" data-close-modal aria-label="Fermer">✕</button>
+        </header>
+
+        <section class="modal-body">
+          <label class="field">
+            <span>Titre</span>
+            <input type="text" id="card-title" placeholder="Titre de la carte" />
+          </label>
+
+          <div class="field">
+            <span>Étiquettes</span>
+            <div class="label-grid" id="label-grid"></div>
+          </div>
+
+          <div class="field">
+            <span>Description</span>
+            <div class="editor-toolbar" id="editor-toolbar">
+              <button type="button" data-cmd="bold"><strong>G</strong></button>
+              <button type="button" data-cmd="italic"><em>I</em></button>
+              <button type="button" data-cmd="underline"><u>S</u></button>
+              <button type="button" data-cmd="insertUnorderedList">• Liste</button>
+              <button type="button" data-cmd="insertOrderedList">1. Liste</button>
+              <button type="button" data-cmd="createLink">Lien</button>
+              <button type="button" data-cmd="removeFormat">Nettoyer</button>
+            </div>
+            <div class="editor" id="card-description" contenteditable="true" data-placeholder="Écris ici..."></div>
+          </div>
+
+          <div class="field">
+            <span>Checklist</span>
+            <div class="checklist" id="checklist"></div>
+            <div class="checklist-add">
+              <input type="text" id="checklist-input" placeholder="Nouvel item" />
+              <button type="button" id="add-checklist-item">Ajouter</button>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <button class="danger" type="button" id="trash-card">Mettre à la corbeille</button>
+          <div class="footer-actions">
+            <button class="ghost" type="button" data-close-modal>Fermer</button>
+            <button class="primary" type="button" id="save-card">Sauvegarder</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Modal : gestion des étiquettes -->
+    <div class="modal" id="labels-modal" aria-hidden="true">
+      <div class="modal-backdrop" id="labels-modal-backdrop"></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="labels-modal-title">
+        <header>
+          <div>
+            <p class="kicker">Paramètres</p>
+            <h3 id="labels-modal-title">Gérer les étiquettes</h3>
+          </div>
+          <button class="icon" type="button" id="close-labels-modal" aria-label="Fermer">✕</button>
+        </header>
+        <section class="modal-body">
+          <div id="labels-list"></div>
+          <button class="ghost" type="button" id="add-label-btn">+ Ajouter une étiquette</button>
+        </section>
+      </div>
+    </div>
+
+    <!-- Modal : couleur de fond -->
+    <div class="modal" id="bg-modal" aria-hidden="true">
+      <div class="modal-backdrop" id="bg-modal-backdrop"></div>
+      <div class="modal-card modal-card--small" role="dialog" aria-modal="true" aria-labelledby="bg-modal-title">
+        <header>
+          <div>
+            <p class="kicker">Apparence</p>
+            <h3 id="bg-modal-title">Couleur de fond</h3>
+          </div>
+          <button class="icon" type="button" id="close-bg-modal" aria-label="Fermer">✕</button>
+        </header>
+        <section class="modal-body">
+          <label class="field">
+            <span>Couleur</span>
+            <input type="color" id="bg-color-picker" value="#fffaf4" class="bg-color-picker" />
+          </label>
+        </section>
+        <footer>
+          <button class="ghost" type="button" id="reset-bg-color">Réinitialiser</button>
+          <button class="primary" type="button" id="close-bg-modal-btn">Fermer</button>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

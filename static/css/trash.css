@@ -1,0 +1,146 @@
+.trash-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 20;
+}
+
+.trash-fab-btn {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #eadfce;
+  box-shadow: 0 8px 24px rgba(32, 24, 14, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  padding: 0;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.trash-fab-btn:hover {
+  background: #fff3ef;
+  color: #c0392b;
+  box-shadow: 0 12px 28px rgba(32, 24, 14, 0.2);
+}
+
+.trash-fab.active .trash-fab-btn {
+  background: #ffe0d1;
+  color: #c0392b;
+  transform: scale(1.14);
+  box-shadow: 0 14px 32px rgba(240, 90, 79, 0.28);
+}
+
+.trash-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #f05a4f;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 4px 0;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.trash-panel {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 25;
+  padding: 0 28px 96px;
+}
+
+.trash-panel.open {
+  display: flex;
+}
+
+.trash-panel-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(28, 22, 16, 0.18);
+}
+
+.trash-panel-inner {
+  position: relative;
+  background: #fffdf8;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 50px rgba(20, 14, 8, 0.18);
+  width: min(360px, 92vw);
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: floatIn 0.25s ease;
+}
+
+.trash-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid #eadfce;
+}
+
+.trash-panel-header h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.trash-panel-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.trash-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.trash-list:empty::after {
+  content: 'La corbeille est vide.';
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+  display: block;
+  padding: 20px 0;
+}
+
+.trash-item {
+  background: #fff6ef;
+  border: 1px solid #f1d1bf;
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.trash-item h4 {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.trash-actions {
+  display: flex;
+  gap: 6px;
+}
