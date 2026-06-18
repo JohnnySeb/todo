@@ -27,7 +27,7 @@ h1 {
 }
 
 .subtitle {
-  color: var(--muted);
+  color: var(--white);
   margin: 0;
   max-width: 420px;
 }
