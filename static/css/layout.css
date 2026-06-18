@@ -47,7 +47,6 @@ h1 {
 
 .column {
   background: rgba(255, 255, 255, 0.7);
-  border: 1px solid #eadfce;
   border-radius: var(--radius-lg);
   padding: 16px;
   display: flex;

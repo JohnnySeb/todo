@@ -2,13 +2,14 @@
   "columns": {
     "todo": {
       "name": "À faire",
-      "cardIds": []
+      "cardIds": [
+        "card_1781705213510_391d8bdf83dc58"
+      ]
     },
     "waiting": {
       "name": "En attente",
       "cardIds": [
         "card_1781719719573_e234d89c0ac708",
-        "card_1781705213510_391d8bdf83dc58",
         "card_1781552189788_a8ed7e7c074c2",
         "card_1770146373472_5cee83ff8dd938",
         "card_1777408110436_96a7538d1dae28"
@@ -103,15 +104,6 @@
       ],
       "title": "Craft learning - Val St-Côme"
     },
-    "card_1781030016245_d9c33a2d155de": {
-      "checklist": [],
-      "description": "",
-      "id": "card_1781030016245_d9c33a2d155de",
-      "labels": [],
-      "lastColumn": "waiting",
-      "lastIndex": 0,
-      "title": "Sans titre"
-    },
     "card_1781202189335_4091542f7418d8": {
       "checklist": [],
       "description": "",
@@ -154,9 +146,7 @@
       "title": "Colabor - Salon de la restauration"
     }
   },
-  "trash": [
-    "card_1781030016245_d9c33a2d155de"
-  ],
+  "trash": [],
   "labels": [
     {
       "color": "#b07ccf",
